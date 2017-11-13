@@ -4,7 +4,6 @@ def consolidate_cart(cart)
   cart.each do |element|
     element.each do |item, info|
         consolidated_hash[item] = info
-        puts info
         info[:count] ||=0
         info[:count] +=1
     end
