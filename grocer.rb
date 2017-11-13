@@ -46,7 +46,7 @@ def checkout(cart, coupons)
   coupons_applied = apply_coupons(consolidated_cart, coupons)
   discounts_applied = apply_clearance(coupons_applied)
 
-  price = 0
+  price = 0.0
   discounts_applied.each do |item, info|
     price += discounts_applied[item][:price].to_f
   end
