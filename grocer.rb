@@ -23,7 +23,7 @@ def consolidate_cart(cart)
 
   return consolidated_hash
 end
-# 
+#
 # def apply_coupons(cart, coupons)
 #   coupons.each do |coupon|
 #     if cart["#{coupon[:item]} W/COUPON"]
@@ -39,13 +39,13 @@ end
 #     end
 #     cart[coupon[:item]][:count] -= coupon[:num]
 #   end
-# 
+#
 #   return cart
 # end
 
 def apply_coupons(cart, coupons)
   coupons.each do |coupon|
-    if cart["#{coupon[:item]} W/COUPON")]
+    if cart["#{coupon[:item]} W/COUPON"]
       cart["#{coupon[:item]} W/COUPON"][:count] +=1
     elsif cart[coupon[:item]]
       cart["#{coupon[:item]} W/COUPON"] = {
@@ -96,6 +96,3 @@ end
 
 # cart = [{"BEER" => {:price => 13.00, :clearance => false}}, {"BEER" => {:price => 13.00, :clearance => false}}, {"BEER" => {:price => 13.00, :clearance => false}}]
 # coupons = [{:item => "BEER", :num => 2, :cost => 20.00}, {:item => "BEER", :num => 2, :cost => 20.00}]
-
-
-
