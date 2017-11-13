@@ -48,7 +48,7 @@ def checkout(cart, coupons)
 
   price = 0.0
   discounts_applied.each do |item, info|
-    price += discounts_applied[item][:price].to_f
+    price += discounts_applied[item][:price].to_f * discounts_applied[item][:count].to_f
   end
 
   if price > 100
