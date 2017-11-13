@@ -47,10 +47,9 @@ def checkout(cart, coupons)
   discounts_applied = apply_clearance(coupons_applied)
 
   price = 0
-  # discounts_applied.each do |item, info|
-  #   puts item[info][:price]
-  # end
-  puts discounts_applied
+  discounts_applied.each do |item, info|
+    puts item[:price]
+  end
 
   return price
 end
