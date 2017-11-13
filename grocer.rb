@@ -1,8 +1,18 @@
 def consolidate_cart(cart)
   consolidated_hash = {}
 
+  # cart.each do |element|
+  #   element.each do |item, info|
+  #       consolidated_hash[item] = info
+  #       info[:count] ||=0
+  #       info[:count] +=1
+  #   end
+  # end
+
   cart.each do |element|
     element.each do |item, info|
+      if consolidated_hash[item]
+          info[:count] += 1
         consolidated_hash[item] = info
         info[:count] ||=0
         info[:count] +=1
