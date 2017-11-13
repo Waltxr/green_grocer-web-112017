@@ -12,7 +12,7 @@ def consolidate_cart(cart)
   cart.each do |element|
     element.each do |item, info|
       if consolidated_hash[item]
-        puts consolidated_hash[item]
+        consolidated_hash[item][:count] += 1
       else
         consolidated_hash[item] = info
         info[:count] ||=0
