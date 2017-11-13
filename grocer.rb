@@ -13,12 +13,11 @@ def consolidate_cart(cart)
 end
 
 def apply_coupons(cart, coupons)
-  puts coupons
   coupons.each do |coupon|
     cart["#{coupon[:item]} W/COUPON"] = {
       :price=>coupon[:cost],
       :clearance=>cart[coupon[:item]][:clearance],
-      :count => 
+      :count =>
     }
     cart["#{coupon[:item]} W/COUPON"][:count] += 1
     cart[coupon[:item]][:count] -= coupon[:num]
