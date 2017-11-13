@@ -14,6 +14,9 @@ end
 
 def apply_coupons(cart, coupons)
   coupons.each do |coupon|
+    if coupon[:item] == nil
+      return cart
+    else
     cart["#{coupon[:item]} W/COUPON"] = {
       :price=>coupon[:cost],
       :clearance=>cart[coupon[:item]][:clearance],
@@ -22,6 +25,7 @@ def apply_coupons(cart, coupons)
       # :count=>cart[coupon[:item]][:count] - coupon[:num]
     }
     cart[coupon[:item]][:count] -= coupon[:num]
+  end
   end
 
   return cart
