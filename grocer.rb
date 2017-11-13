@@ -48,7 +48,7 @@ def checkout(cart, coupons)
 
   price = 0
   discounts_applied.each do |item, info|
-    price += cart[item][info][:price]
+    price += cart[item][info][:price].to_i
   end
 
   return price
