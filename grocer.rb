@@ -78,3 +78,5 @@ end
 #   expect(checkout(cart, coupons)).to eq(33.00)
 # end
 # end
+
+cart = [{"BEER" => {:price => 13.00, :clearance => false}}, {"BEER" => {:price => 13.00, :clearance => false}}, {"BEER" => {:price => 13.00, :clearance => false}}]
