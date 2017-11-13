@@ -51,5 +51,8 @@ def checkout(cart, coupons)
     price += discounts_applied[item][:price].to_f
   end
 
+  if price > 100
+  return price - price * 0.10
+  else
   return price
 end
