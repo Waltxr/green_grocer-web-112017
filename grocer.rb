@@ -1,14 +1,6 @@
 def consolidate_cart(cart)
   consolidated_hash = {}
 
-  # cart.each do |element|
-  #   element.each do |item, info|
-  #       consolidated_hash[item] = info
-  #       info[:count] ||=0
-  #       info[:count] +=1
-  #   end
-  # end
-
   cart.each do |element|
     element.each do |item, info|
       if consolidated_hash[item]
@@ -58,7 +50,7 @@ def apply_coupons(cart, coupons)
     end
     cart[coupon[:item]][:count] -= coupon[:num]
   end
-
+  return cart
 def apply_clearance(cart)
   cart.each do |item, info|
     if info[:clearance] == true
@@ -85,14 +77,6 @@ def checkout(cart, coupons)
   end
 end
 
-# it "only applies coupons that meet minimum amount" do
-#   beer = find_item('BEER')
-#   cart = Array.new(3, beer)
-#   beer_coupon = find_coupon("BEER")
-#   coupons = [beer_coupon, beer_coupon]
-#   expect(checkout(cart, coupons)).to eq(33.00)
-# end
-# end
 
 # cart = [{"BEER" => {:price => 13.00, :clearance => false}}, {"BEER" => {:price => 13.00, :clearance => false}}, {"BEER" => {:price => 13.00, :clearance => false}}]
 # coupons = [{:item => "BEER", :num => 2, :cost => 20.00}, {:item => "BEER", :num => 2, :cost => 20.00}]
