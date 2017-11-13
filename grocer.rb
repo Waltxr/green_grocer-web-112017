@@ -14,8 +14,8 @@ end
 
 def apply_coupons(cart, coupons)
   coupons.each do |coupon|
-    if cart[coupon[:item]]
-      
+    if cart["#{coupon[:item]} W/COUPON"]
+
     cart["#{coupon[:item]} W/COUPON"] = {
       :price=>coupon[:cost],
       :clearance=>cart[coupon[:item]][:clearance],
