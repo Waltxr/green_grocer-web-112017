@@ -14,7 +14,7 @@ end
 
 def apply_coupons(cart, coupons)
   coupons.each do |coupon|
-    if cart.keys.include?("#{coupon[:item]} W/COUPON")
+    if cart["#{coupon[:item]} W/COUPON"]
       cart["#{coupon[:item]} W/COUPON"][:count] +=1
     elsif cart.keys.include?(coupon[:item])
       cart["#{coupon[:item]} W/COUPON"] = {
@@ -45,5 +45,6 @@ def checkout(cart, coupons)
   consolidated_cart = consolidate_cart(cart)
   coupons_applied = apply_coupons(consolidated_cart, coupons)
   discounts_applied = apply_clearance(coupons_applied)
-  return discounts_applied
+
+  discounts_applied.each do ||
 end
