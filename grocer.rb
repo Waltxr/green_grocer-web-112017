@@ -28,7 +28,7 @@ def apply_coupons(cart, coupons)
   coupons.each do |coupon|
     if cart["#{coupon[:item]} W/COUPON"]
       cart["#{coupon[:item]} W/COUPON"][:count] +=1
-    elsif cart[coupon[:item]] && cart[coupon[:item]][:count] > coupon[:num]
+    elsif cart[coupon[:item]] && cart[coupon[:item]][:count].to_i > coupon[:num].to_i
       cart["#{coupon[:item]} W/COUPON"] = {
         :price=>coupon[:cost],
         :clearance=>cart[coupon[:item]][:clearance],
@@ -82,21 +82,4 @@ end
 # cart = [{"BEER" => {:price => 13.00, :clearance => false}}, {"BEER" => {:price => 13.00, :clearance => false}}, {"BEER" => {:price => 13.00, :clearance => false}}]
 # coupons = [{:item => "BEER", :num => 2, :cost => 20.00}, {:item => "BEER", :num => 2, :cost => 20.00}]
 
-# def apply_coupons(cart, coupons)
-#   coupons.each do |coupon|
-#     if cart["#{coupon[:item]} W/COUPON"]
-#       cart["#{coupon[:item]} W/COUPON"][:count] +=1
-#     elsif cart[coupon[:item]] && cart[coupon[:item]][:count] > coupon[:num]
-#       cart["#{coupon[:item]} W/COUPON"] = {
-#         :price=>coupon[:cost],
-#         :clearance=>cart[coupon[:item]][:clearance],
-#         :count => 1
-#       }
-#     else
-#       return cart
-#     end
-#     cart[coupon[:item]][:count] -= coupon[:num]
-#   end
-# 
-#   return cart
-# end
+
