@@ -37,6 +37,7 @@ end
 
 def apply_coupons(cart, coupons)
   coupons.each do |coupon|
+    while cart[coupon[:item]][:count] > coupon[:num]
       if cart["#{coupon[:item]} W/COUPON"]
         cart["#{coupon[:item]} W/COUPON"][:count] +=1
       elsif cart[coupon[:item]]
@@ -67,7 +68,6 @@ def checkout(cart, coupons)
   # coupons_applied = apply_coupons(consolidated_cart, coupons)
   # discounts_applied = apply_clearance(coupons_applied)
 
-  
 
   price = 0.0
   discounts_applied.each do |item, info|
