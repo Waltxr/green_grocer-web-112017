@@ -49,7 +49,7 @@ def checkout(cart, coupons)
   price = 0
   discounts_applied.each do |item, info|
     # price += item[:price]
-    puts discounts_applied[item][:price]
+    puts discounts_applied[item][:price].is_a?(integers)
   end
 
   return price
