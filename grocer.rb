@@ -52,7 +52,7 @@ def checkout(cart, coupons)
   end
 
   if price > 100
-  return price - price * 0.10
+    return price - price * 0.10
   else
-  return price
+    return price
 end
