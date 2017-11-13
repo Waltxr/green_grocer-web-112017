@@ -55,4 +55,5 @@ def checkout(cart, coupons)
     return price - price * 0.10
   else
     return price
+  end
 end
