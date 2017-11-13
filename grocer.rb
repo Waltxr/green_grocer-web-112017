@@ -69,3 +69,12 @@ def checkout(cart, coupons)
     return price
   end
 end
+
+# it "only applies coupons that meet minimum amount" do
+#   beer = find_item('BEER')
+#   cart = Array.new(3, beer)
+#   beer_coupon = find_coupon("BEER")
+#   coupons = [beer_coupon, beer_coupon]
+#   expect(checkout(cart, coupons)).to eq(33.00)
+# end
+# end
